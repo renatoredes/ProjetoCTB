@@ -4,7 +4,7 @@
 package br.com.psc.projetoctb.model.vo;
 
 /**
- * @author Jeferson
+ * @author Jeferson Guerra, Caio Phillipe, Renato Ferreira.
  *
  */
 public class Empresa {
@@ -12,7 +12,7 @@ public class Empresa {
 	private String cnpjEmpresa;
 	private String cepEndereco;
 	private String nomeFantazia;
-	private String razaoSocial;
+	private String razaoTeste;
 	/**
 	 * @return the cnpjEmpresa
 	 */
@@ -53,13 +53,13 @@ public class Empresa {
 	 * @return the razaoSocial
 	 */
 	public String getRazaoSocial() {
-		return razaoSocial;
+		return razaoTeste;
 	}
 	/**
 	 * @param razaoSocial the razaoSocial to set
 	 */
 	public void setRazaoSocial(String razaoSocial) {
-		this.razaoSocial = razaoSocial;
+		this.razaoTeste = razaoSocial;
 	}
 	
 
