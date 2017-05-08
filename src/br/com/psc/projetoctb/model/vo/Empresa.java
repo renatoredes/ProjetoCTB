@@ -12,7 +12,7 @@ public class Empresa {
 	private String cnpjEmpresa;
 	private String cepEndereco;
 	private String nomeFantazia;
-	private String razaoSocial;
+	private String razaoVidaLoka;
 	/**
 	 * @return the cnpjEmpresa
 	 */
