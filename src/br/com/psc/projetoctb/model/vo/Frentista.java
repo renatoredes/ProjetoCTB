@@ -3,10 +3,15 @@
  */
 package br.com.psc.projetoctb.model.vo;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * @author Caio Phillipe, Jefferson Guerra, Renato Ferreira
  *
  */
+@Entity
+@Table(name="frentista")
 public class Frentista extends Pessoa {
 
 		private int matriculaFrentista;

@@ -3,10 +3,15 @@
  */
 package br.com.psc.projetoctb.model.vo;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * @author Jeferson Guerra, Caio Phillipe, Renato Ferreira.
  *
  */
+@Entity
+@Table(name="empresa")
 public class Empresa {
 	
 	private String cnpjEmpresa;

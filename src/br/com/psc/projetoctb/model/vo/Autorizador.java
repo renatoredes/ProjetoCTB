@@ -3,10 +3,15 @@
  */
 package br.com.psc.projetoctb.model.vo;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * @author Caio Phillipe, Jefferson Guerra, Renato Ferreira
  *
  */
+@Entity
+@Table(name="autorizador")
 public class Autorizador extends Pessoa {
 	
 	private int matriculaAutorizador;

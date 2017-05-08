@@ -5,10 +5,15 @@ package br.com.psc.projetoctb.model.vo;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * @author Caio Phillipe, Jefferson Guerra, Renato Ferreira
  *s
  */
+@Entity
+@Table(name="colaborador")
 public class Colaborador extends Pessoa{
 	
 	private int matriculaColaborador;
