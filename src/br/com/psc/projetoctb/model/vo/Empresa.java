@@ -10,10 +10,23 @@ package br.com.psc.projetoctb.model.vo;
 public class Empresa {
 	
 	private String cnpjEmpresa;
-	private String cepEndereco;
 	private String nomeFantazia;
 	private String razaoSocial;
+	
+	private Endereco endereco;
 
+	/**
+	 * @return the endereco
+	 */
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	/**
+	 * @param endereco the endereco to set
+	 */
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 	/**
 	 * @return the cnpjEmpresa
 	 */
@@ -29,15 +42,7 @@ public class Empresa {
 	/**
 	 * @return the cepEndereco
 	 */
-	public String getCepEndereco() {
-		return cepEndereco;
-	}
-	/**
-	 * @param cepEndereco the cepEndereco to set
-	 */
-	public void setCepEndereco(String cepEndereco) {
-		this.cepEndereco = cepEndereco;
-	}
+	
 	/**
 	 * @return the nomeFantazia
 	 */
