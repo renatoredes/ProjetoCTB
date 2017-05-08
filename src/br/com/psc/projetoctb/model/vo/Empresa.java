@@ -4,7 +4,7 @@
 package br.com.psc.projetoctb.model.vo;
 
 /**
- * @author Jeferson
+ * @author Jeferson Guerra, Caio Phillipe, Renato Ferreira.
  *
  */
 public class Empresa {
@@ -12,7 +12,8 @@ public class Empresa {
 	private String cnpjEmpresa;
 	private String cepEndereco;
 	private String nomeFantazia;
-	private String razaoVidaLoka;
+	private String razaoSocial;
+
 	/**
 	 * @return the cnpjEmpresa
 	 */
