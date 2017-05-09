@@ -11,11 +11,12 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="autorizador")
-public class Autorizador extends Pessoa {
+@Table(name="autorizadorEmpresa")
+public class AutorizadorEmpresa extends Pessoa {
 	
 	private int matriculaAutorizador;
 	private String funcaoAutorizador;
+	
 	/**
 	 * @return the matriculaAutorizador
 	 */

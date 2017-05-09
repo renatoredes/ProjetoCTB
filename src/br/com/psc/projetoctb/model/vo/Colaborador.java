@@ -25,7 +25,7 @@ public class Colaborador extends Pessoa{
 	private String foneColaborador;
 	
 	private Empresa empresa;
-	private Autorizador autorizador;
+	private AutorizadorEmpresa autorizador;
 	
 	
 	/**
@@ -127,13 +127,13 @@ public class Colaborador extends Pessoa{
 	/**
 	 * @return the autorizador
 	 */
-	public Autorizador getAutorizador() {
+	public AutorizadorEmpresa getAutorizador() {
 		return autorizador;
 	}
 	/**
 	 * @param autorizador the autorizador to set
 	 */
-	public void setAutorizador(Autorizador autorizador) {
+	public void setAutorizador(AutorizadorEmpresa autorizador) {
 		this.autorizador = autorizador;
 	}
 	

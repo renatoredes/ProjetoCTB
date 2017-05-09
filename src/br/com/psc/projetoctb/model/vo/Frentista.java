@@ -16,7 +16,7 @@ public class Frentista extends Pessoa {
 
 		private int matriculaFrentista;
 		
-		private PostoDeCombustivel postoDeCombustivel;
+		private PostoCombustivel postoDeCombustivel;
 
 		/**
 		 * @return the matriculaFrentista
@@ -35,14 +35,14 @@ public class Frentista extends Pessoa {
 		/**
 		 * @return the postoDeCombustivel
 		 */
-		public PostoDeCombustivel getPostoDeCombustivel() {
+		public PostoCombustivel getPostoDeCombustivel() {
 			return postoDeCombustivel;
 		}
 
 		/**
 		 * @param postoDeCombustivel the postoDeCombustivel to set
 		 */
-		public void setPostoDeCombustivel(PostoDeCombustivel postoDeCombustivel) {
+		public void setPostoDeCombustivel(PostoCombustivel postoDeCombustivel) {
 			this.postoDeCombustivel = postoDeCombustivel;
 		}
 		

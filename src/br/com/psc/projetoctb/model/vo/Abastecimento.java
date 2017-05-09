@@ -17,15 +17,15 @@ import javax.persistence.Table;
 public class Abastecimento {
 
 		private int codigoAbastecimento;
-		
 		private Date dataHoraAbastecimento;
 		private double valorLitro;
 		private double valorTotal;
 		private int quantidadeAbastecimento;
 		
-		private PostoDeCombustivel postoDeCombustivel;
+		private Veiculo veiculo;
+		private Frentista frentista;
+		private OrdemAbastecimento ordemAbastecimento;
 		
-
 		/**
 		 * @return the codigoAbastecimento
 		 */
@@ -97,18 +97,47 @@ public class Abastecimento {
 		}
 
 		/**
-		 * @return the postoDeCombustivel
+		 * @return the veiculo
 		 */
-		public PostoDeCombustivel getPostoDeCombustivel() {
-			return postoDeCombustivel;
+		public Veiculo getVeiculo() {
+			return veiculo;
 		}
 
 		/**
-		 * @param postoDeCombustivel the postoDeCombustivel to set
+		 * @param veiculo the veiculo to set
 		 */
-		public void setPostoDeCombustivel(PostoDeCombustivel postoDeCombustivel) {
-			this.postoDeCombustivel = postoDeCombustivel;
+		public void setVeiculo(Veiculo veiculo) {
+			this.veiculo = veiculo;
 		}
+
+		/**
+		 * @return the frentista
+		 */
+		public Frentista getFrentista() {
+			return frentista;
+		}
+
+		/**
+		 * @param frentista the frentista to set
+		 */
+		public void setFrentista(Frentista frentista) {
+			this.frentista = frentista;
+		}
+
+		/**
+		 * @return the ordemAbastecimento
+		 */
+		public OrdemAbastecimento getOrdemAbastecimento() {
+			return ordemAbastecimento;
+		}
+
+		/**
+		 * @param ordemAbastecimento the ordemAbastecimento to set
+		 */
+		public void setOrdemAbastecimento(OrdemAbastecimento ordemAbastecimento) {
+			this.ordemAbastecimento = ordemAbastecimento;
+		}
+
 		
 		
 }

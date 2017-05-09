@@ -11,11 +11,10 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="postoDeCombustivel")
-public class PostoDeCombustivel {
+@Table(name="postoCombustivel")
+public class PostoCombustivel {
 
 	private String cnpjPosto;
-	
 	private String nomeFantasia;
 	private String razaoSocialPosto;
 	
