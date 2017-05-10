@@ -3,18 +3,43 @@
  */
 package br.com.psc.projetoctb.model.vo;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+
 /**
- * @author Jeferson
+ * @author Jeferson Guerra, Caio Phillipe, Renato Ferreira.
  *
  */
+@Entity
+@Table(name="veiculo")
 public class Veiculo {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int id;
 	
 	private String placaVeiculo;
 	private String veiculoAgregado;
 	private String veiculoEmpresa;
 	
+	@OneToOne(cascade = CascadeType.ALL)
 	private ModeloVeiculo modeloVeiculo; 
-	private Colaborador colaborador;  
+	
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "veiculo")
+	@JoinColumn(name = "veiculo_id")
+	private List<Abastecimento> abastecimentos;
 	
 	/**
 	 * @return the modeloVeiculo
@@ -28,18 +53,7 @@ public class Veiculo {
 	public void setModeloVeiculo(ModeloVeiculo modeloVeiculo) {
 		this.modeloVeiculo = modeloVeiculo;
 	}
-	/**
-	 * @return the colaborador
-	 */
-	public Colaborador getColaborador() {
-		return colaborador;
-	}
-	/**
-	 * @param colaborador the colaborador to set
-	 */
-	public void setColaborador(Colaborador colaborador) {
-		this.colaborador = colaborador;
-	}
+	
 	/**
 	 * @return the placaVeiculo
 	 */

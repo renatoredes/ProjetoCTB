@@ -3,13 +3,24 @@
  */
 package br.com.psc.projetoctb.model.vo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
- * @author Jeferson
+ * @author Jeferson Guerra, Caio Phillipe, Renato Ferreira.
  *
  */
+@Entity
+@Table(name="modeloVeiculo")
 public class ModeloVeiculo {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int codigoModelo;
+	
 	private int corVeiculo;
 	private String anoFabricacao;
 	private String nomeFabricante;

@@ -9,6 +9,8 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author Caio Phillipe, Jefferson Guerra, Renato Ferreira
@@ -19,11 +21,13 @@ import javax.persistence.Table;
 public class SolicitaAbastecimento {
 
 	private int codigoSolicitacaoAbastecimento;
+	
+	@Temporal(TemporalType.TIMESTAMP) //@Temporal informa o tipo de data que será salvo.
 	private Date dataSolicitacaoAbastecimento;
+	
 	private String observacaoSolicitacaoAbastecimento;
 	
-	private Colaborador colaborador;
-	private OrdemAbastecimento ordemAbastecimento;
+	
 	private TipoAbastecimento tipoAbastecimento;
 	
 	/**
@@ -62,30 +66,7 @@ public class SolicitaAbastecimento {
 	public void setObservacaoSolicitacaoAbastecimento(String observacaoSolicitacaoAbastecimento) {
 		this.observacaoSolicitacaoAbastecimento = observacaoSolicitacaoAbastecimento;
 	}
-	/**
-	 * @return the colaborador
-	 */
-	public Colaborador getColaborador() {
-		return colaborador;
-	}
-	/**
-	 * @param colaborador the colaborador to set
-	 */
-	public void setColaborador(Colaborador colaborador) {
-		this.colaborador = colaborador;
-	}
-	/**
-	 * @return the ordemAbastecimento
-	 */
-	public OrdemAbastecimento getOrdemAbastecimento() {
-		return ordemAbastecimento;
-	}
-	/**
-	 * @param ordemAbastecimento the ordemAbastecimento to set
-	 */
-	public void setOrdemAbastecimento(OrdemAbastecimento ordemAbastecimento) {
-		this.ordemAbastecimento = ordemAbastecimento;
-	}
+	
 	/**
 	 * @return the tipoAbastecimento
 	 */

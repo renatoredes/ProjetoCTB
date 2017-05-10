@@ -6,6 +6,10 @@ package br.com.psc.projetoctb.model.vo;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -15,16 +19,22 @@ import javax.persistence.Table;
 @Entity
 @Table(name="abastecimento")
 public class Abastecimento {
-
+		
+		
+		@Id
+		@GeneratedValue(strategy= GenerationType.SEQUENCE)
+		private int id;
+		
 		private int codigoAbastecimento;
 		private Date dataHoraAbastecimento;
 		private double valorLitro;
 		private double valorTotal;
 		private int quantidadeAbastecimento;
 		
+		
+		@ManyToOne
 		private Veiculo veiculo;
-		private Frentista frentista;
-		private OrdemAbastecimento ordemAbastecimento;
+		
 		
 		/**
 		 * @return the codigoAbastecimento
@@ -110,33 +120,7 @@ public class Abastecimento {
 			this.veiculo = veiculo;
 		}
 
-		/**
-		 * @return the frentista
-		 */
-		public Frentista getFrentista() {
-			return frentista;
-		}
-
-		/**
-		 * @param frentista the frentista to set
-		 */
-		public void setFrentista(Frentista frentista) {
-			this.frentista = frentista;
-		}
-
-		/**
-		 * @return the ordemAbastecimento
-		 */
-		public OrdemAbastecimento getOrdemAbastecimento() {
-			return ordemAbastecimento;
-		}
-
-		/**
-		 * @param ordemAbastecimento the ordemAbastecimento to set
-		 */
-		public void setOrdemAbastecimento(OrdemAbastecimento ordemAbastecimento) {
-			this.ordemAbastecimento = ordemAbastecimento;
-		}
+		
 
 		
 		
