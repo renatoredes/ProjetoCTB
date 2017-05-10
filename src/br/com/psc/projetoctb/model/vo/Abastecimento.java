@@ -5,12 +5,21 @@ package br.com.psc.projetoctb.model.vo;
 
 import java.sql.Date;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 /**
  * @author Caio Phillipe, Jefferson Guerra, Renato Ferreira
@@ -26,16 +35,36 @@ public class Abastecimento {
 		private int id;
 		
 		private int codigoAbastecimento;
+		
+		@Temporal(TemporalType.TIMESTAMP)
 		private Date dataHoraAbastecimento;
+		
 		private double valorLitro;
 		private double valorTotal;
 		private int quantidadeAbastecimento;
 		
 		
 		@ManyToOne
+		@JoinColumn(name= "id_veiculo", insertable=true, updatable=true)
+		@Fetch(FetchMode.JOIN)
+		@Cascade(CascadeType.SAVE_UPDATE)
 		private Veiculo veiculo;
 		
 		
+		/**
+		 * @return the id
+		 */
+		public int getId() {
+			return id;
+		}
+
+		/**
+		 * @param id the id to set
+		 */
+		public void setId(int id) {
+			this.id = id;
+		}
+
 		/**
 		 * @return the codigoAbastecimento
 		 */

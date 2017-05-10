@@ -17,6 +17,7 @@ import javax.persistence.Table;
 
 
 
+
 /**
  * @author Jeferson Guerra, Caio Phillipe, Renato Ferreira.
  *
@@ -27,6 +28,7 @@ public class Veiculo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@JoinColumn(name="id_veiculo")
 	private int id;
 	
 	private String placaVeiculo;
@@ -38,7 +40,6 @@ public class Veiculo {
 	
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "veiculo")
-	@JoinColumn(name = "veiculo_id")
 	private List<Abastecimento> abastecimentos;
 	
 	/**
@@ -46,6 +47,30 @@ public class Veiculo {
 	 */
 	public ModeloVeiculo getModeloVeiculo() {
 		return modeloVeiculo;
+	}
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+	/**
+	 * @return the abastecimentos
+	 */
+	public List<Abastecimento> getAbastecimentos() {
+		return abastecimentos;
+	}
+	/**
+	 * @param abastecimentos the abastecimentos to set
+	 */
+	public void setAbastecimentos(List<Abastecimento> abastecimentos) {
+		this.abastecimentos = abastecimentos;
 	}
 	/**
 	 * @param modeloVeiculo the modeloVeiculo to set
