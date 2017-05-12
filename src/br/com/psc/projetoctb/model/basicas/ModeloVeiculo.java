@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.psc.projetoctb.model;
+package br.com.psc.projetoctb.model.basicas;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

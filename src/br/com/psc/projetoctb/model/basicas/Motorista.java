@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.psc.projetoctb.model;
+package br.com.psc.projetoctb.model.basicas;
 
 import java.util.List;
 
@@ -17,9 +17,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="motorista")
 public class Motorista extends Pessoa {
-
+	
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "motorista")
 	private List<SolicitaAbastecimento> solicitaAbastecimentos;
+	
 
 	/**
 	 * @return the solicitaAbastecimentos

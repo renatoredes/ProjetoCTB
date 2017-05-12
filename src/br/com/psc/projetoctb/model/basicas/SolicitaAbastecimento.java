@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.psc.projetoctb.model;
+package br.com.psc.projetoctb.model.basicas;
 
 
 
