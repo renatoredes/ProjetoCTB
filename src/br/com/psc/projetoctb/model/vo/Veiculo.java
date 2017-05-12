@@ -11,9 +11,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 
 
@@ -28,7 +32,7 @@ public class Veiculo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@JoinColumn(name="id_veiculo")
+	@JoinColumn(name="idVeiculo")
 	private int id;
 	
 	private String placaVeiculo;
@@ -42,6 +46,24 @@ public class Veiculo {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "veiculo")
 	private List<Abastecimento> abastecimentos;
 	
+		
+	@ManyToOne
+	@JoinColumn(name= "idPessoa", insertable=true, updatable=true)
+	@Fetch(FetchMode.JOIN)
+	private Pessoa pessoa;
+	
+	/**
+	 * @return the pessoa
+	 */
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+	/**
+	 * @param pessoa the pessoa to set
+	 */
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
 	/**
 	 * @return the modeloVeiculo
 	 */

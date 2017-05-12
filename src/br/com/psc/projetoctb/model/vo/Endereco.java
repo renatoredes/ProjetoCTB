@@ -3,7 +3,15 @@
  */
 package br.com.psc.projetoctb.model.vo;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -14,13 +22,44 @@ import javax.persistence.Table;
 @Table(name="endereco")
 public class Endereco {
 
+	@Id
+	@GeneratedValue(strategy= GenerationType.SEQUENCE)
+	@JoinColumn(name="idEnderco")
+	private int id;
+	
 	private String cepEndereco;
 	private int numeroEndereco;
 	private String ruaEndereco;
 	private String bairroEndereco;
 	private String estadoEndereco;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "endereco")
+	private List<Empresa> empresas;
 	
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+	/**
+	 * @return the empresas
+	 */
+	public List<Empresa> getEmpresas() {
+		return empresas;
+	}
+	/**
+	 * @param empresas the empresas to set
+	 */
+	public void setEmpresas(List<Empresa> empresas) {
+		this.empresas = empresas;
+	}
 	/**
 	 * @return the cepEndereco
 	 */

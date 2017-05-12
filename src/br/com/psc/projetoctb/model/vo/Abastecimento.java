@@ -32,6 +32,7 @@ public class Abastecimento {
 		
 		@Id
 		@GeneratedValue(strategy= GenerationType.SEQUENCE)
+		@JoinColumn(name="idAbastecimento")
 		private int id;
 		
 		private int codigoAbastecimento;
@@ -45,12 +46,32 @@ public class Abastecimento {
 		
 		
 		@ManyToOne
-		@JoinColumn(name= "id_veiculo", insertable=true, updatable=true)
+		@JoinColumn(name= "idVeiculo", insertable=true, updatable=true)
 		@Fetch(FetchMode.JOIN)
 		@Cascade(CascadeType.SAVE_UPDATE)
 		private Veiculo veiculo;
 		
+		@ManyToOne
+		@JoinColumn(name= "idTipoAbastecimento", insertable=true, updatable=true)
+		@Fetch(FetchMode.JOIN)
+		@Cascade(CascadeType.SAVE_UPDATE)
+		private TipoAbastecimento tipoabastecimento;
 		
+		
+		/**
+		 * @return the tipoabastecimento
+		 */
+		public TipoAbastecimento getTipoabastecimento() {
+			return tipoabastecimento;
+		}
+
+		/**
+		 * @param tipoabastecimento the tipoabastecimento to set
+		 */
+		public void setTipoabastecimento(TipoAbastecimento tipoabastecimento) {
+			this.tipoabastecimento = tipoabastecimento;
+		}
+
 		/**
 		 * @return the id
 		 */

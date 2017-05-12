@@ -3,7 +3,11 @@
  */
 package br.com.psc.projetoctb.model.vo;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -17,6 +21,21 @@ public class TipoAbastecimento {
 	private int codigoDoCombustivel;
 	private String especificacaoAbastecimento;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoabastecimento")
+	private List<Abastecimento> abastecimentos;
+	
+	/**
+	 * @return the abastecimentos
+	 */
+	public List<Abastecimento> getAbastecimentos() {
+		return abastecimentos;
+	}
+	/**
+	 * @param abastecimentos the abastecimentos to set
+	 */
+	public void setAbastecimentos(List<Abastecimento> abastecimentos) {
+		this.abastecimentos = abastecimentos;
+	}
 	/**
 	 * @return the codigoDoCombustivel
 	 */

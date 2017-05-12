@@ -8,9 +8,14 @@ package br.com.psc.projetoctb.model.vo;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 /**
  * @author Caio Phillipe, Jefferson Guerra, Renato Ferreira
@@ -25,11 +30,42 @@ public class SolicitaAbastecimento {
 	@Temporal(TemporalType.TIMESTAMP) //@Temporal informa o tipo de data que será salvo.
 	private Date dataSolicitacaoAbastecimento;
 	
-	private String observacaoSolicitacaoAbastecimento;
+	
+	@ManyToOne
+	@JoinColumn(name= "id", insertable=true, updatable=true)
+	@Fetch(FetchMode.JOIN)
+	private Gerente gerente;
+	
+	@ManyToOne
+	@JoinColumn(name= "id", insertable=true, updatable=true)
+	@Fetch(FetchMode.JOIN)
+	private Motorista motorista;
 	
 	
-	private TipoAbastecimento tipoAbastecimento;
-	
+	/**
+	 * @return the gerente
+	 */
+	public Gerente getGerente() {
+		return gerente;
+	}
+	/**
+	 * @param gerente the gerente to set
+	 */
+	public void setGerente(Gerente gerente) {
+		this.gerente = gerente;
+	}
+	/**
+	 * @return the motorista
+	 */
+	public Motorista getMotorista() {
+		return motorista;
+	}
+	/**
+	 * @param motorista the motorista to set
+	 */
+	public void setMotorista(Motorista motorista) {
+		this.motorista = motorista;
+	}
 	/**
 	 * @return the codigoSolicitacaoAbastecimento
 	 */
@@ -54,29 +90,5 @@ public class SolicitaAbastecimento {
 	public void setDataSolicitacaoAbastecimento(Date dataSolicitacaoAbastecimento) {
 		this.dataSolicitacaoAbastecimento = dataSolicitacaoAbastecimento;
 	}
-	/**
-	 * @return the observacaoSolicitacaoAbastecimento
-	 */
-	public String getObservacaoSolicitacaoAbastecimento() {
-		return observacaoSolicitacaoAbastecimento;
-	}
-	/**
-	 * @param observacaoSolicitacaoAbastecimento the observacaoSolicitacaoAbastecimento to set
-	 */
-	public void setObservacaoSolicitacaoAbastecimento(String observacaoSolicitacaoAbastecimento) {
-		this.observacaoSolicitacaoAbastecimento = observacaoSolicitacaoAbastecimento;
-	}
 	
-	/**
-	 * @return the tipoAbastecimento
-	 */
-	public TipoAbastecimento getTipoAbastecimento() {
-		return tipoAbastecimento;
-	}
-	/**
-	 * @param tipoAbastecimento the tipoAbastecimento to set
-	 */
-	public void setTipoAbastecimento(TipoAbastecimento tipoAbastecimento) {
-		this.tipoAbastecimento = tipoAbastecimento;
-	}
 }
