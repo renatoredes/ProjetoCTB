@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.psc.projetoctb.model.vo;
+package br.com.psc.projetoctb.model;
 
 
 import java.util.List;
