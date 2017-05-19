@@ -4,11 +4,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import br.com.psc.projetoctb.model.basicas.Abastecimento;
 import br.com.psc.projetoctb.model.basicas.Empresa;
 import br.com.psc.projetoctb.model.basicas.Endereco;
 import br.com.psc.projetoctb.model.basicas.FuncionarioMotorista;
 import br.com.psc.projetoctb.model.basicas.Gerente;
 import br.com.psc.projetoctb.model.basicas.Pessoa;
+import br.com.psc.projetoctb.model.basicas.TipoAbastecimento;
 
 
 
@@ -48,16 +50,21 @@ public class TestandoProjetoCTB {
 		endereco.setCep("54325-777");
 		endereco.setRua("Rua da tecnloiga");
 		
-			em.persist(p);
+			
+		TipoAbastecimento tipoabastecimento = new TipoAbastecimento();
+		tipoabastecimento.setEspecificacao("Gasolina");
+		
+		    em.persist(p);
 			em.persist(f);
 			em.persist(g);
 			em.persist(empresa);
 			em.persist(endereco);
+		    em.persist(tipoabastecimento);
 			
 		
 			em.getTransaction().commit(); 
 		
-		System.out.println("salvo com sucesso projeto FaculdadeRenatoFerreira");
+		System.out.println("salvo com sucesso projeto CTB");
 		System.out.println("www.alosuporte.com.br");
 
 		em.close();
