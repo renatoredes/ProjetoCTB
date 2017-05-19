@@ -6,9 +6,9 @@
 	<persistence-unit name="exemploPU" transaction-type="RESOURCE_LOCAL">
 		
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/renatoferreira"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_controle_ctb"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.jdbc.password" value="1234"/>
+			<property name="javax.persistence.jdbc.password" value="aabbcc12345"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			
 			<!-- validate | update | create | create-drop -->

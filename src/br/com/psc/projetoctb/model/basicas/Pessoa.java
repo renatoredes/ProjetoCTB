@@ -38,6 +38,13 @@ public class Pessoa {
 			this.idade = idade;
 		}
 		
+		@Override
+		public String toString(){
+			return "Nome de Pessoa: "+nome+", Idade de Pessoa: "+idade;
+		}
+		
+		
+		
 		
 }
 
