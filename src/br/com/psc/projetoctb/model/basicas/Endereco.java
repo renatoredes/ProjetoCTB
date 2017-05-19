@@ -3,7 +3,15 @@
  */
 package br.com.psc.projetoctb.model.basicas;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 
 /**
  * @author Jeferson
@@ -13,69 +21,64 @@ import javax.persistence.Entity;
 @Entity
 public class Endereco {
 	
+	@Id
+	@GeneratedValue
+	private int codigoEndereco;
 	private String cep;
 	private int numero;
 	private String rua;
 	private String bairro;
 	private String estado;
-	/**
-	 * @return the cep
-	 */
+	public int getCodigoEndereco() {
+		return codigoEndereco;
+	}
+	public void setCodigoEndereco(int codigoEndereco) {
+		this.codigoEndereco = codigoEndereco;
+	}
 	public String getCep() {
 		return cep;
 	}
-	/**
-	 * @param cep the cep to set
-	 */
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	/**
-	 * @return the numero
-	 */
 	public int getNumero() {
 		return numero;
 	}
-	/**
-	 * @param numero the numero to set
-	 */
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-	/**
-	 * @return the rua
-	 */
 	public String getRua() {
 		return rua;
 	}
-	/**
-	 * @param rua the rua to set
-	 */
 	public void setRua(String rua) {
 		this.rua = rua;
 	}
-	/**
-	 * @return the bairro
-	 */
 	public String getBairro() {
 		return bairro;
 	}
-	/**
-	 * @param bairro the bairro to set
-	 */
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	/**
-	 * @return the estado
-	 */
 	public String getEstado() {
 		return estado;
 	}
-	/**
-	 * @param estado the estado to set
-	 */
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+	
+	@OneToMany
+	@JoinTable(name = "Endereco_Empresa",
+	joinColumns = @JoinColumn(name = "Endereco_id"),
+    inverseJoinColumns = @JoinColumn ( name =" Empresa_id "))
+	private Collection<Empresa> empresa= new ArrayList<Empresa>();
+	public Collection<Empresa> getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(Collection<Empresa> empresa) {
+		this.empresa = empresa;
+	}
+	
+	
+	
+	
 }

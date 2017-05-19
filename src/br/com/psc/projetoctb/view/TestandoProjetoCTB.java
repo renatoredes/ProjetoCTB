@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import br.com.psc.projetoctb.model.basicas.Empresa;
+import br.com.psc.projetoctb.model.basicas.Endereco;
 import br.com.psc.projetoctb.model.basicas.FuncionarioMotorista;
 import br.com.psc.projetoctb.model.basicas.Gerente;
 import br.com.psc.projetoctb.model.basicas.Pessoa;
@@ -37,10 +39,20 @@ public class TestandoProjetoCTB {
 		g.setIdade("101");
 		g.setCodigoGerente(100);
 		
+		Empresa empresa = new Empresa();
+		
+		empresa.setCnpjEmpresa("CNPJ : 01.611.929/0001-10");
+		empresa.setNomeFantasia("Digital center");
+		
+		Endereco endereco = new Endereco();
+		endereco.setCep("54325-777");
+		endereco.setRua("Rua da tecnloiga");
 		
 			em.persist(p);
 			em.persist(f);
 			em.persist(g);
+			em.persist(empresa);
+			em.persist(endereco);
 			
 		
 			em.getTransaction().commit(); 

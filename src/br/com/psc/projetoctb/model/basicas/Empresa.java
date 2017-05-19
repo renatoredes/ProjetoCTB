@@ -4,6 +4,8 @@
 package br.com.psc.projetoctb.model.basicas;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * @author Jeferson
@@ -11,61 +13,39 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Empresa {
+
+	@Id
+	@GeneratedValue
+	private int codigoEmpresa;
 	
 	private String cnpjEmpresa;
 	private String nomeFantasia;
-	private  String razaoSocial;
-	
-	private Endereco endereco;
-	
-	/**
-	 * @return the endereco
-	 */
-	public Endereco getEndereco() {
-		return endereco;
+	private String razaoSocial;
+	public int getCodigoEmpresa() {
+		return codigoEmpresa;
 	}
-	/**
-	 * @param endereco the endereco to set
-	 */
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
+	public void setCodigoEmpresa(int codigoEmpresa) {
+		this.codigoEmpresa = codigoEmpresa;
 	}
-	/**
-	 * @return the cnpjEmpresa
-	 */
 	public String getCnpjEmpresa() {
 		return cnpjEmpresa;
 	}
-	/**
-	 * @param cnpjEmpresa the cnpjEmpresa to set
-	 */
 	public void setCnpjEmpresa(String cnpjEmpresa) {
 		this.cnpjEmpresa = cnpjEmpresa;
 	}
-	/**
-	 * @return the nomeFantasia
-	 */
 	public String getNomeFantasia() {
 		return nomeFantasia;
 	}
-	/**
-	 * @param nomeFantasia the nomeFantasia to set
-	 */
 	public void setNomeFantasia(String nomeFantasia) {
 		this.nomeFantasia = nomeFantasia;
 	}
-	/**
-	 * @return the razaoSocial
-	 */
 	public String getRazaoSocial() {
 		return razaoSocial;
 	}
-	/**
-	 * @param razaoSocial the razaoSocial to set
-	 */
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
 	}
+
 	
 
 }

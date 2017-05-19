@@ -4,6 +4,7 @@
 package br.com.psc.projetoctb.model.basicas;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * @author Jeferson
@@ -12,21 +13,23 @@ import javax.persistence.Entity;
 @Entity
 public class TipoAbastecimento {
 	
+	@Id
+	private int codigoTipoabastecimento;
 	private String especificacao;
-
-	/**
-	 * @return the especificacao
-	 */
+	public int getCodigoTipoabastecimento() {
+		return codigoTipoabastecimento;
+	}
+	public void setCodigoTipoabastecimento(int codigoTipoabastecimento) {
+		this.codigoTipoabastecimento = codigoTipoabastecimento;
+	}
 	public String getEspecificacao() {
 		return especificacao;
 	}
-
-	/**
-	 * @param especificacao the especificacao to set
-	 */
 	public void setEspecificacao(String especificacao) {
 		this.especificacao = especificacao;
 	}
+
 	
 
+	
 }
