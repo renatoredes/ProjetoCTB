@@ -12,7 +12,7 @@ import br.com.psc.projetoctb.model.dao.geral.DAOGenerico;
  * @author Jeferson
  *
  */
-public class VeiculoModeloDAO extends DAOGenerico<VeiculoModelo> {
+public class VeiculoModeloDAO extends DAOGenerico<VeiculoModelo>{
 
 	public VeiculoModeloDAO(EntityManagerFactory emf) {
 		super(emf);

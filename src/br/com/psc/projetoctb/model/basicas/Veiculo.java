@@ -20,6 +20,7 @@ import javax.persistence.OneToOne;
  */
 @Entity
 public class Veiculo {
+	
 		
 	@Id
 	@GeneratedValue
@@ -27,6 +28,12 @@ public class Veiculo {
 	
 	private String veiculoAgregado;
 	private String veiculoEmpres;
+	private String placa;
+	private String chassis;
+	private int numeroDocumento;
+	private int kmInicial;
+	private int kmFinal;
+	
 	
 	@OneToOne
 	@JoinColumn(name="veiculomodelo_id")
@@ -107,6 +114,76 @@ public class Veiculo {
 	 */
 	public void setVeiculoModelo(VeiculoModelo veiculoModelo) {
 		this.veiculoModelo = veiculoModelo;
+	}
+
+	/**
+	 * @return the placa
+	 */
+	public String getPlaca() {
+		return placa;
+	}
+
+	/**
+	 * @param placa the placa to set
+	 */
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
+
+	/**
+	 * @return the chassis
+	 */
+	public String getChassis() {
+		return chassis;
+	}
+
+	/**
+	 * @param chassis the chassis to set
+	 */
+	public void setChassis(String chassis) {
+		this.chassis = chassis;
+	}
+
+	/**
+	 * @return the numeroDocumento
+	 */
+	public int getNumeroDocumento() {
+		return numeroDocumento;
+	}
+
+	/**
+	 * @param numeroDocumento the numeroDocumento to set
+	 */
+	public void setNumeroDocumento(int numeroDocumento) {
+		this.numeroDocumento = numeroDocumento;
+	}
+
+	/**
+	 * @return the kmInicial
+	 */
+	public int getKmInicial() {
+		return kmInicial;
+	}
+
+	/**
+	 * @param kmInicial the kmInicial to set
+	 */
+	public void setKmInicial(int kmInicial) {
+		this.kmInicial = kmInicial;
+	}
+
+	/**
+	 * @return the kmFinal
+	 */
+	public int getKmFinal() {
+		return kmFinal;
+	}
+
+	/**
+	 * @param kmFinal the kmFinal to set
+	 */
+	public void setKmFinal(int kmFinal) {
+		this.kmFinal = kmFinal;
 	}
 	
 }

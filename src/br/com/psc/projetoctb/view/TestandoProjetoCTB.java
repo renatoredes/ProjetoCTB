@@ -104,14 +104,14 @@ public class TestandoProjetoCTB {
 	}
 	
 	public static void consultarPorId(){
-		JOptionPane.showMessageDialog(null, DAOFactory.getPessoaDAO().searchByKey(1));
+		JOptionPane.showMessageDialog(null, DAOFactory.getPessoaDAO().searchByKey(2));
 	}
 	
 	public static void main(String[] args) {
 		
 		//testarCadastro();
 		//inserir();
-		//consultarPorId();
+		consultarPorId();
 
 	}
 }
