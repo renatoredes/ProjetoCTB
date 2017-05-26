@@ -62,8 +62,4 @@ public abstract class DAOFactory {
 		EnderecoDAO dao = new EnderecoDAO(factory);
 		return dao;
 	}
-	public static PessoaDAO getPessoaDAO(){
-		PessoaDAO dao = new PessoaDAO(factory);
-		return dao;
-	}
 }
