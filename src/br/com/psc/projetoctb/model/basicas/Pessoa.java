@@ -28,7 +28,7 @@ public abstract class Pessoa {
 		//private String login;   //<<< 
 		//private String senha;   //<<<
 		
-		private Endereco endereco;
+		//private Endereco endereco;
 		
 		
 		public int getId() {
@@ -118,22 +118,14 @@ public abstract class Pessoa {
 		public void setFuncao(String funcao) {
 			this.funcao = funcao;
 		}
-		/**
-		 * @return the endereco
-		 */
-		public Endereco getEndereco() {
-			return endereco;
-		}
-		/**
-		 * @param endereco the endereco to set
-		 */
-		public void setEndereco(Endereco endereco) {
-			this.endereco = endereco;
-		}
+		
+		
 		public void setIdade(String idade) {
 			this.idade = idade;
 		}
 		
+		
+		/*
 		@Override
 		public String toString(){
 			return "Nome de Pessoa: "+nome+", Idade: "+idade+", cpf: "+
@@ -142,7 +134,7 @@ public abstract class Pessoa {
 		    funcao + endereco;
 		}
 		
-		
+		*/
 		
 		
 }

@@ -13,7 +13,9 @@ import br.com.psc.projetoctb.model.basicas.Endereco;
 import br.com.psc.projetoctb.model.basicas.FuncionarioMotorista;
 import br.com.psc.projetoctb.model.basicas.Gerente;
 import br.com.psc.projetoctb.model.basicas.Pessoa;
+import br.com.psc.projetoctb.model.basicas.Veiculo;
 import br.com.psc.projetoctb.model.dao.geral.DAOFactory;
+import br.com.psc.projetoctb.model.fachada.Fachada;
 
 /**
  * @author Jeferson
@@ -22,37 +24,21 @@ import br.com.psc.projetoctb.model.dao.geral.DAOFactory;
 
 public class TestandoProjetoCTB {
 	
-	public static void inserir(){
-		
-		FuncionarioMotorista f = new FuncionarioMotorista();
-		f.setNome("User1");
-		f.setIdade("10");
-		f.setCodigoFuncionarioMotorista(87);
-		DAOFactory.getFuncionarioMotoristaDAO().insert(f);
-		
+	private static void incluir() throws Exception{
 		Gerente g = new Gerente();
-		g.setNome("User21");
-		g.setIdade("101");
-		g.setCodigoGerente(100);
-		DAOFactory.getGerenteDAO().insert(g);
-		
-		Empresa empresa = new Empresa();
-		empresa.setCnpjEmpresa("CNPJ : 01.611.929/0001-10");
-		empresa.setNomeFantasia("Digital center");
-		DAOFactory.getEmpresaDAO().insert(empresa);
-		
-		Endereco endereco = new Endereco();
-		endereco.setCep("54325-777");
-		endereco.setRua("Rua da tecnloiga");
-		DAOFactory.getEnderecoDAO().insert(endereco);
-		
+		g.setNome("Melissa Sousa Barbosa");
+		g.setCpf("73007592542");
+		g.setEstadoCivil("Solteira");
+		g.setFuncao("Gerente");
+		g.setRg("1234567");
+		g.setIdade("19");
+		g.setTelefone("(14)9798-4646");
+		Fachada.getInstancia().salvarNovoGerente(g);
 	}
 	
-	
-	public static void main(String[] args) {
-		
-		//testarCadastro();
-		inserir();
+	public static void main(String args[]) throws Exception{
+		incluir();	
+	}
 
-	}
 }
+

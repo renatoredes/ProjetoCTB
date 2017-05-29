@@ -13,11 +13,10 @@ public class VeiculoRN {
 	}
 	
 
-    public void salvarNovo(Veiculo v)throws Exception {
+    public void inserirNovo(Veiculo v)throws Exception {
         validaPreenchimento(v);
         
         vd.insert(v);
-	
     }
     
     
@@ -30,6 +29,4 @@ public class VeiculoRN {
     		throw new Exception("Placa nao pode ser nula"); 
 	
     }
-    
-
 }
