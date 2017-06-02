@@ -3,18 +3,9 @@
  */
 package br.com.psc.projetoctb.view;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.swing.JOptionPane;
 
-import br.com.psc.projetoctb.model.basicas.Empresa;
-import br.com.psc.projetoctb.model.basicas.Endereco;
 import br.com.psc.projetoctb.model.basicas.FuncionarioMotorista;
 import br.com.psc.projetoctb.model.basicas.Gerente;
-import br.com.psc.projetoctb.model.basicas.Pessoa;
-import br.com.psc.projetoctb.model.basicas.Veiculo;
-import br.com.psc.projetoctb.model.dao.geral.DAOFactory;
 import br.com.psc.projetoctb.model.fachada.Fachada;
 
 /**
@@ -33,7 +24,20 @@ public class TestandoProjetoCTB {
 		g.setRg("1234567");
 		g.setIdade("19");
 		g.setTelefone("(14)9798-4646");
+		g.setCelular("(81)9345-6212");
 		Fachada.getInstancia().salvarNovoGerente(g);
+		
+		FuncionarioMotorista fm = new FuncionarioMotorista();
+		fm.setNome("Livia Cardoso Sousa");
+		fm.setCpf("98252783406");
+		fm.setEstadoCivil("Solteira");
+		fm.setFuncao("FuncionariaMotorista");
+		fm.setRg("3012234");
+		fm.setIdade("20");
+		fm.setTelefone("(14)9398-4446");
+		fm.setCelular("(81)9845-0202");
+		Fachada.getInstancia().salvarNovoFuncionarioMotorista(fm);
+	
 	}
 	
 	public static void main(String args[]) throws Exception{

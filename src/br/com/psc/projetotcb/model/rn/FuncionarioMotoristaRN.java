@@ -1,30 +1,30 @@
+/**
+ * 
+ */
 package br.com.psc.projetotcb.model.rn;
 
+import br.com.psc.projetoctb.model.basicas.FuncionarioMotorista;
 import br.com.psc.projetoctb.model.basicas.Gerente;
-import br.com.psc.projetoctb.model.dao.GerenteDAO;
+import br.com.psc.projetoctb.model.dao.FuncionarioMotoristaDAO;
 import br.com.psc.projetoctb.model.dao.geral.DAOFactory;
 
-public class GerenteRN {
+/**
+ * @author Jeferson
+ *
+ */
+public class FuncionarioMotoristaRN {
+	private FuncionarioMotoristaDAO fmd;
 	
-	private final GerenteDAO gd;
-	
-	public GerenteRN(){
-		gd = DAOFactory.getGerenteDAO();
+	public FuncionarioMotoristaRN(){
+		fmd = DAOFactory.getFuncionarioMotoristaDAO();
 	}
 	
-	/**
-	 * @param com o objeto gerente
-	 * 
-	 */
-	
-	public void inserirNovo(Gerente g) throws Exception{
-		validaPreenchimento(g);
-		gd.insert(g);		
-	}
-
-	//Funções internas
-	
-	private void validaPreenchimento(Gerente objeto) throws Exception {
+    public void inserirNovo(FuncionarioMotorista fm)throws Exception {
+    	validaPreenchimento(fm);
+        fmd.insert(fm);
+    }   
+    
+	private void validaPreenchimento(FuncionarioMotorista objeto) throws Exception {
 		if (objeto.getNome().equals(null))
 			throw new Exception("Nome nao pode ser nulo");
 		if (objeto.getCpf().equals(null))
@@ -42,5 +42,4 @@ public class GerenteRN {
 		if (objeto.getTelefone() == null)
 			throw new Exception("Telefone não pode ser nulo");
 	}
-	
 }
