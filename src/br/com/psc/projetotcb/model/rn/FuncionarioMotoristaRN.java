@@ -4,7 +4,6 @@
 package br.com.psc.projetotcb.model.rn;
 
 import br.com.psc.projetoctb.model.basicas.FuncionarioMotorista;
-import br.com.psc.projetoctb.model.basicas.Gerente;
 import br.com.psc.projetoctb.model.dao.FuncionarioMotoristaDAO;
 import br.com.psc.projetoctb.model.dao.geral.DAOFactory;
 
@@ -25,9 +24,9 @@ public class FuncionarioMotoristaRN {
     }   
     
 	private void validaPreenchimento(FuncionarioMotorista objeto) throws Exception {
-		if (objeto.getNome().equals(null))
+		if (objeto.getNome() == null)
 			throw new Exception("Nome nao pode ser nulo");
-		if (objeto.getCpf().equals(null))
+		if (objeto.getCpf() == null)
 			throw new Exception("CPF nao pode ser nulo");
 		if (objeto.getCelular() == null)
 			throw new Exception("Celular nao pode ser nulo");

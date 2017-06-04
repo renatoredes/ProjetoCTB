@@ -2,7 +2,6 @@
     <wb-module deploy-name="ProjetoCTB">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/tsw"/>
         <property name="context-root" value="ProjetoCTB"/>
         <property name="java-output-path" value="/ProjetoCTB/build/classes"/>
     </wb-module>
