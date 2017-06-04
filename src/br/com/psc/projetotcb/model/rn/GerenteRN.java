@@ -25,9 +25,9 @@ public class GerenteRN {
 	//Funções internas
 	
 	private void validaPreenchimento(Gerente objeto) throws Exception {
-		if (objeto.getNome().equals(null))
+		if (objeto.getNome() == null)
 			throw new Exception("Nome nao pode ser nulo");
-		if (objeto.getCpf().equals(null))
+		if (objeto.getCpf() == null)
 			throw new Exception("CPF nao pode ser nulo");
 		if (objeto.getCelular() == null)
 			throw new Exception("Celular nao pode ser nulo");
@@ -42,5 +42,4 @@ public class GerenteRN {
 		if (objeto.getTelefone() == null)
 			throw new Exception("Telefone não pode ser nulo");
 	}
-	
 }
